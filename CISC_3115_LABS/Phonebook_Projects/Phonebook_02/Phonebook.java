@@ -28,7 +28,8 @@ class Phonebook {
                         String firstName = in.next();
                         Name tempName = new Name(firstName, lastName);
                         for (int n = 0; n < entries.length; n += 1) {
-                            if (entries[n].getName().equals(tempName)) {
+                            // Make sure entries are not null
+                            if (entries[n] != null && entries[n].getName().equals(tempName)) {
                                 indexOfEntry = n;
                                 break;
                             }
@@ -45,7 +46,8 @@ class Phonebook {
                         System.out.print("\nphone number (nnn-nnn-nnnn)? ");
                         PhoneNumber tempNumber = new PhoneNumber(in.next());
                         for (int n = 0; n < entries.length; n += 1) {
-                            if (entries[n].getPhoneNumber().equals(tempNumber)) {
+                            // Make sure entries are not null
+                            if (entries[n] != null && entries[n].getPhoneNumber().equals(tempNumber)) {
                                 indexOfEntry = n;
                             }
                         }
