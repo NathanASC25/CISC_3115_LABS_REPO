@@ -23,7 +23,7 @@ class Phonebook {
         }
         else {
             System.out.print("-- Name not found\n\n");
-	}
+        }
         lookUps += 1;
     }
     public static void reverseLookup(Scanner sc, int indexOfEntry) {
