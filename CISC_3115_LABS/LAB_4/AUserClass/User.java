@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.NoSuchElementException;
 public class User {
     private String username = "", password = "", passwordHint = "";
     public User(String username, String password, String passwordHint) {
@@ -19,14 +20,14 @@ public class User {
         return "User " + getUsername();
     }
     public static User read(Scanner sc) {
-        //try {
+        try {
             String username = sc.next();
             String password = sc.next();
             String passwordHint = sc.next();
             return new User(username, password, passwordHint);
-	//}
-        //catch (NoSuchElementException e) {
-          //  throw new NoSuchElementException(e.getMessage());
-        //}
+	}
+        catch (NoSuchElementException e) {
+            return null;
+        }
     }
 }
