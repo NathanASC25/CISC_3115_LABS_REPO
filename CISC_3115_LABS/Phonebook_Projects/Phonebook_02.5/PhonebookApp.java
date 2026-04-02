@@ -36,6 +36,7 @@ class PhonebookApp {
         System.out.printf("%d reverse lookups performed", reverseLookUps);
     }
 }
+
 class Phonebook {
     private final static int DEFAULTCAPACITY = 100;
     private int numOfElements = 0;
@@ -56,13 +57,16 @@ class Phonebook {
             scanEntries.close();
         }
         catch (ArrayIndexOutOfBoundsException e) {
-            System.out.print("\n***Exception*** Phonebook capacity exceeded - increase size of underlying array\n");
+            System.out.print("*** Exception *** Phonebook capacity exceeded - increase size of underlying array\n");
+            System.exit(0);
         }
         catch (IOException e) {
-            System.out.print("\n***IOException*** phonebook text (No such file or directory\n");
+            System.out.print("*** IOException *** phonebook text (No such file or directory\n");
+            System.exit(0);
         }
         catch (Exception e) {
             e.printStackTrace();
+            System.exit(0);
         }
     }
     public Phonebook(String fileName) {
@@ -80,16 +84,19 @@ class Phonebook {
         }
         catch (ArrayIndexOutOfBoundsException e) {
             System.out.print("\n***Exception*** Phonebook capacity exceeded - increase size of underlying array\n");
+            System.exit(0);
         }
         catch (IOException e) {
             System.out.print("\n***IOException*** phonebook text (No such file or directory\n");
+            System.exit(0);
         }
         catch (Exception e) {
             e.printStackTrace();
+            System.exit(0);
         }
     }
     public void lookup(Scanner sc, int indexOfEntry) {
-        System.out.print("\nlast name? ");
+        System.out.print("last name? ");
         String lastName = sc.next();
         System.out.print("first name? ");
         String firstName = sc.next();
