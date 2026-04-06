@@ -1,1 +1,0 @@
-lookup, reverse-lookup, quit (l/r/q)? 
