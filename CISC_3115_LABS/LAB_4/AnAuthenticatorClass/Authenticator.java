@@ -3,8 +3,9 @@ import java.io.File;
 import java.io.IOException;
 import java.lang.UnsupportedOperationException;
 import java.util.InputMismatchException;
+import java.lang.NullPointerException;
 class Authenticator {
-    User[] users = new User[100];
+    private User[] users = new User[100];
     public Authenticator(String fileName) throws IOException {
         int index = 0;
         Scanner scanFile = new Scanner(new File(fileName));
@@ -20,7 +21,10 @@ class Authenticator {
         boolean usernameFound = false, passwordMatched = false;
 	int userIndex = -1;
         for (int index = 0; index < users.length; index += 1) {
-            if (users[index].getUsername().equals(username)) {
+            if (users[index] == null) {
+                break;
+	    }
+	    if (users[index].getUsername().equals(username)) {
                 userIndex = index;
                 usernameFound = true;
             }
@@ -32,7 +36,7 @@ class Authenticator {
             throw new UnsupportedOperationException("No such user found");
         }
         if (!passwordMatched) {
-            throw new InputMismatchException("*** Invalid password - hint: " + users[userIndex].getHint());
+            throw new InputMismatchException("Invalid password - hint: " + users[userIndex].getHint());
         }
     }
 }
