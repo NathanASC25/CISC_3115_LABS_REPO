@@ -3,4 +3,12 @@ public class PrintStarsApp {
         PrintStars obj = new PrintStars();
         obj.printTriangle(5);
     }
+    /**
+     * Output:
+     * *
+     * **
+     * ***
+     * ****
+     * *****
+     */
 }
