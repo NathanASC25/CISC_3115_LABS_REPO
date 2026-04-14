@@ -29,7 +29,7 @@ public class WindowApp {
                         height = scanLine.nextInt();
                         windows[scannerIndex] = new BorderedWindow(width, height);
                         break;
-		    default:
+                    default:
                         throw new InputMismatchException("Wrong input type");
                 }
             }
@@ -65,7 +65,7 @@ public class WindowApp {
             System.out.println();
         }
     }
-    public static int countNumOfLines(Scanner sc) {
+    private static int countNumOfLines(Scanner sc) {
         int numOfLines = 0;
         while (sc.hasNextLine()) {
             numOfLines += 1;
