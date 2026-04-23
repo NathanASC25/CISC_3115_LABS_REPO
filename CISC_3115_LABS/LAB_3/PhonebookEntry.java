@@ -34,7 +34,7 @@ public class PhonebookEntry {
                         int phonesIndex = -1;
                         String lastName = sc.next();
                         String firstName = sc.next();
-                        Name newName = new Name(firstName, lastName);
+                        Name newName = new Name(lastName, firstName);
                         PhoneNumber newNumber = new PhoneNumber(sc.next());
                         PhonebookEntry newEntry = new PhonebookEntry(newName, newNumber);
                         for (int n = 0; n < names.size(); n += 1) {
