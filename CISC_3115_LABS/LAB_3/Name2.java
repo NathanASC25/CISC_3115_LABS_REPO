@@ -20,10 +20,10 @@ public class Name2 {
         }
         public static Name2 read(Scanner scan) {
                 if (scan.hasNext()) {
-                		String lastName = scan.next();
-                		String firstName = scan.next();
-                		numInputs += 1;
-                		return new Name2(firstName, lastName);	
+                        String lastName = scan.next();
+                        String firstName = scan.next();
+                        numInputs += 1;
+                        return new Name2(firstName, lastName);	
                 }
                 return null;
         }

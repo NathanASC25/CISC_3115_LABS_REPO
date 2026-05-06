@@ -30,27 +30,27 @@ public class Name {
         }
         public static Name read(Scanner scan) {
                 try {
-                		String lastName = scan.next();
-                		String firstName = scan.next();
-                		boolean con1 = firstNames.indexOf(firstName) > -1;
-                		boolean con2 = lastNames.indexOf(lastName) > -1;
-                		boolean con3 = firstNames.indexOf(firstName) == lastNames.indexOf(lastName);
-                		if (con1 && con2 && con3) {
-                				duplicates.add(lastName + ", " + firstName + " at lines " + (firstNames.indexOf(firstName) + 1) + " and " + (firstNames.size() + 1));	
-                		}
-                		lastNames.add(lastName);
-                		firstNames.add(firstName);
-                		numInputs += 1;
-                		return new Name(firstName, lastName);	
+                    String lastName = scan.next();
+                    String firstName = scan.next();
+                    boolean con1 = firstNames.indexOf(firstName) > -1;
+                    boolean con2 = lastNames.indexOf(lastName) > -1;
+                    boolean con3 = firstNames.indexOf(firstName) == lastNames.indexOf(lastName);
+                    if (con1 && con2 && con3) {
+                        duplicates.add(lastName + ", " + firstName + " at lines " + (firstNames.indexOf(firstName) + 1) + " and " + (firstNames.size() + 1));	
+                    }
+                    lastNames.add(lastName);
+                    firstNames.add(firstName);
+                    numInputs += 1;
+                    return new Name(firstName, lastName);	
                 }
                 catch (NoSuchElementException e) {
-                		System.out.println("---");
-                		System.out.printf("%d names input\n", numInputs);
-                		System.out.println("Duplicates found in file: ");
-                		for (String line : duplicates) {
-                			System.out.printf("%s\n", line);	
-                		}
-                		throw new NoSuchElementException();
+                    System.out.println("---");
+                    System.out.printf("%d names input\n", numInputs);
+                    System.out.println("Duplicates found in file: ");
+                    for (String line : duplicates) {
+                        System.out.printf("%s\n", line);	
+                    }
+                    throw new NoSuchElementException();
                 }
         }
 }
