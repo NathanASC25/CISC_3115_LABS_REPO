@@ -19,14 +19,14 @@ class PhonebookApp {
                 case "l":
                     phonebook.lookup(in, indexOfEntry);
                     lookUps += 1;
-                    break;
+                    continue;
                 case "r":
                     phonebook.reverseLookup(in, indexOfEntry);
                     reverseLookUps += 1;
-                    break;
+                    continue;
                 case "q":
                     done = true;
-                    break;
+                    continue;
                 default:
                     System.out.print("\nInvalid input.\n");
             }
