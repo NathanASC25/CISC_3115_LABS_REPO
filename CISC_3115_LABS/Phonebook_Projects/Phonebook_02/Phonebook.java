@@ -1,12 +1,12 @@
+import java.util.Scanner;
 import java.io.File;
 import java.io.IOException;
-import java.util.Scanner;
 class Phonebook {
     private static int lookUps = 0;
     private static int reverseLookUps = 0;
     private static PhonebookEntry[] entries = new PhonebookEntry[100];
     public static void lookup(Scanner sc, int indexOfEntry) {
-        System.out.print("\nlast name? ");
+        System.out.print("last name? ");
         String lastName = sc.next();
         System.out.print("first name? ");
         String firstName = sc.next();
@@ -23,11 +23,11 @@ class Phonebook {
         }
         else {
             System.out.print("-- Name not found\n\n");
-        }
+	}
         lookUps += 1;
     }
     public static void reverseLookup(Scanner sc, int indexOfEntry) {
-        System.out.print("\nphone number (nnn-nnn-nnnn)? ");
+        System.out.print("phone number (nnn-nnn-nnnn)? ");
         PhoneNumber tempNumber = new PhoneNumber(sc.next());
         for (int n = 0; n < entries.length; n += 1) {
             // Make sure entries are not null
@@ -73,14 +73,14 @@ class Phonebook {
                 }
             }
             in.close();
-            System.out.printf("%d lookups performed\n", lookUps);
-            System.out.printf("%d reverse lookups performed", reverseLookUps);
+            System.out.printf("\n%d lookups performed", lookUps);
+            System.out.printf("\n%d reverse lookups performed", reverseLookUps);
         }
         catch (ArrayIndexOutOfBoundsException e) {
-            System.out.print("\n***Exception*** Phonebook capacity exceeded - increase size of underlying array\n");
+            System.out.print("*** Exception *** Phonebook capacity exceeded - increase size of underlying array\n");
         }
         catch (IOException e) {
-            System.out.print("\n***IOException*** phonebook text (No such file or directory\n");
+            System.out.print("*** IOException *** phonebook text (No such file or directory\n");
         }
         catch (Exception e) {
             e.printStackTrace();
